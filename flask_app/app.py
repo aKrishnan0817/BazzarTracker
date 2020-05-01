@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import *
 
+app = Flask(__name__)
+app.config['SECRET_KEY']='9d98a6c4fce07e21bcd58d3510ed23db'
 
 @app.route('/',methods=['GET',"POST"])
 def index():
