@@ -12,46 +12,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- local style -->
-    <link rel="stylesheet" href="{{ url_for('static'), filename='Style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='Style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <title>{{title}}</title>
   </head>
   <body >
     <!--menu-->
     <!-- container -->
-    <div class="container center">
-      <div class="row">
-        <div class="col-xs-12 text-center warning">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {%if messages %}
-              {% for category, message in messages%}
-                <div class="alert alert-{{category}}">
-                  {{message}}
-                </div>
-              {%endfor%}
-            {%endif%}
-          {%endwith%}
-        </div>
-      </div>
+    <div class="container-fluid">
+      {% block content %}
+      {% endblock %}
       <div class="row">
         <nav>
           <ul>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Account</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="">Tools</a>
               <ul>
                 <li><a href="">Product Charts</a></li>
-                <li><a href="">Invesment Help/a></li>
+                <li><a href="">Invesment Help</a></li>
                 <li><a href="">Highest Margin</a></li>
               </ul>
             </li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+
           </ul>
         </nav>
       </div>
-      {% block content %}
-      {% endblock %}
     </div>
   </body>
 </html>

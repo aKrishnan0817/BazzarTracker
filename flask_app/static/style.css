@@ -10,16 +10,25 @@ body{
   border: solid #222F40 10px;
 
 }
+.text-label{
+  font-size: 17px;
+  color: white;
+}
+.input{
+  width: 75%;
+}
 .center{
   margin: auto;
   text-align: center;
 }
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Verdana;
   list-style:none;
+  font-family: 'Cairo', sans-serif;
 }
 .wrap{
   color: black;
@@ -28,7 +37,8 @@ body{
 
 .screen-title{
   color: black;
-  padding-top: 10px;
+  padding-top: 50%;
+  padding-bottom: 10%;
 }
 nav{
   width: 100%;
